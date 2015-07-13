@@ -25,7 +25,7 @@ SECRET_KEY = 'fc+*_75y7y-^lae(fk$ay9mr0bk+%-)$z5yp7&-=bzvjpp(p(^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['copadb.me', 'www.copadb.me']
 
 
 # Application definition
@@ -110,6 +110,6 @@ MEDIA_URL = '/media/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'staticfiles'),
-)
+#STATICFILES_DIRS = (
+    #os.path.join(BASE_DIR, 'staticfiles'),
+#)
