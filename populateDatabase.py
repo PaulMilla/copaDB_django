@@ -18,7 +18,7 @@ countries_json = json.load(data_file)
 
 results = countries_json["results"] # countries_json[8] is the results dictionary
 for _country in results["countries"] : # for each country in countries list
-    country_object = Country(country=_country["country"], goals=_country["goals"])
+    country_object = Country(country=_country["country"], coach=_country["coach"], goals=_country["goals"])
     country_object.save()
 
 
@@ -38,6 +38,7 @@ for _player in results["players"] :
 # Need to add scorers and players now that the Players have been populated
 results = countries_json["results"] # countries_json[8] is the results dictionary
 for _country in results["countries"] : # for each country in countries list
+    country_object = Country.objects.get(country=_country["country"])
     country_object.captain = Player.objects.get(player=_country["captain"], team=_country["country"])
     if _country["top_scorer"] :
         country_object.top_scorer = Player.objects.get(player=_country["top_scorer"], team=_country["country"])
