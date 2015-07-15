@@ -24,6 +24,8 @@ SECRET_KEY = 'fc+*_75y7y-^lae(fk$ay9mr0bk+%-)$z5yp7&-=bzvjpp(p(^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+DEBUG_PROPOGATE_EXCEPTIONS = True
+TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = ['copadb.me', 'www.copadb.me']
 
@@ -79,10 +81,10 @@ DATABASES = {
     'default': {
         #'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'copaDB.sqlite3')
+        'NAME': os.path.join(BASE_DIR, 'copaDB.sqlite3'),
         #'NAME': 'webdev',
-        #'USER': 'webdev',
-        #'PASSWORD': 'downing373',
+        'USER': 'webdev',
+        'PASSWORD': 'downing373',
         #'HOST': '',
         #'PORT': '5432'
     }
@@ -108,10 +110,11 @@ USE_TZ = True
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
-
+ADMIN_MEDIA_PREFIX = '/media/admin/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 STATIC_URL = '/static/'
+ADMIN_STATIC_PREFIX = '/static/admin'
 #STATICFILES_DIRS = (
     #os.path.join(BASE_DIR, 'staticfiles'),
 #)
