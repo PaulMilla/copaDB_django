@@ -77,12 +77,14 @@ WSGI_APPLICATION = 'copaDB.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'webdev',
-        'USER': 'webdev',
-        'PASSWORD': 'downing373',
-        'HOST': '',
-        'PORT': '5432'
+        #'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'copaDB.sqlite3')
+        #'NAME': 'webdev',
+        #'USER': 'webdev',
+        #'PASSWORD': 'downing373',
+        #'HOST': '',
+        #'PORT': '5432'
     }
 }
 
