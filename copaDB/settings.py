@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'www',
     'rest_framework', #pip install djangorestframework
+    'watson'
 )
 
 REST_FRAMEWORK = {
