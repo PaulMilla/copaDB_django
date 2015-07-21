@@ -9,6 +9,7 @@ python:
 
 env:
     - DJANGO=1.8
+    - DJANGO_SETTINGS_MODULE=copaDB.settings
 
 before_install:
     - sudo apt-get update
@@ -30,6 +31,8 @@ before_script:
 script:
     - date
     - ls -al
+    - rmdir www
+    - git clone --recursive git://github.com/jeongwook/cs373-idb www
     - python3 manage.py check
     - django-admin testserver data/countries.json data/matches.json data/players.json --addrport localhost:8000 &> testserver.log &
     - python3 manage.py check
@@ -37,6 +40,6 @@ script:
     - django-admin sqlall www
     - ls -al
     #- make test
-    - ls -al
+    #- ls -al
     - make check
     - cat testserver.log

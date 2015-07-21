@@ -36,7 +36,7 @@ test:
 	python3 manage.py test --keepdb
 
 models.html:
-	export DJANGO_SETTINGS_MODULE="main.settings"
+	export DJANGO_SETTINGS_MODULE="copaDB.settings"
 	pydoc3 -w ./
 	mv copaDB.models.html copaDB/models.html
 	rm -rf *.html
