@@ -29,7 +29,7 @@ sqlite3:
 	#cat sqlmigrate.log
 	#python3 manage.py migrate
 	python3 manage.py check
-	django-admin testserver data/countries.json data/matches.json data/players.json --addrport localhost:8000
+	django-admin testserver www/data/countries.json www/data/matches.json www/data/players.json --addrport localhost:8000
 	#django-admin sqlall www
 
 test:
