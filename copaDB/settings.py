@@ -145,7 +145,7 @@ LOGGING = {
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': '/tmp/logs/copaDB.log',
+            'filename': 'logs/copaDB.log',
             'formatter': 'verbose'
         },
     },
