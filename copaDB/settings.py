@@ -24,8 +24,8 @@ SECRET_KEY = 'fc+*_75y7y-^lae(fk$ay9mr0bk+%-)$z5yp7&-=bzvjpp(p(^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-DEBUG_PROPOGATE_EXCEPTIONS = True
-TEMPLATE_DEBUG = True
+DEBUG_PROPOGATE_EXCEPTIONS = DEBUG
+TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = ['copadb.me', 'www.copadb.me']
 
