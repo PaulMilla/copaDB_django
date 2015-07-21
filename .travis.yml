@@ -1,0 +1,42 @@
+# http://docs.travis-ci.com/user/build-configuration/
+
+sudo: required
+
+language: python
+
+python:
+    - "3.4"
+
+env:
+    - DJANGO=1.8
+
+before_install:
+    - sudo apt-get update
+
+install:
+    - pip install --upgrade pip
+    - pip install django
+    - pip3 install djangorestframework
+    - pip3 install markdown
+    - pip3 install django-filter
+
+before_script:
+    - uname -a
+    - printenv
+    - pip3 --version
+    - pip3 freeze
+    - python3 --version
+
+script:
+    - date
+    - ls -al
+    - python3 manage.py check
+    - django-admin testserver data/countries.json data/matches.json data/players.json --addrport localhost:8000 &> testserver.log &
+    - python3 manage.py check
+    - ls -al
+    - django-admin sqlall www
+    - ls -al
+    #- make test
+    - ls -al
+    - make check
+    - cat testserver.log
