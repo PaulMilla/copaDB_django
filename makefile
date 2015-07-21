@@ -30,7 +30,7 @@ sqlite3:
 	#python3 manage.py migrate
 	python3 manage.py check
 	django-admin testserver data/countries.json data/matches.json data/players.json --addrport localhost:8000
-	django-admin sqlall www
+	#django-admin sqlall www
 
 test:
 	python3 manage.py test --keepdb
