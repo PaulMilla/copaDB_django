@@ -1,0 +1,44 @@
+# http://docs.travis-ci.com/user/build-configuration/
+
+#sudo: required
+
+language: python
+
+python:
+    - "3.4"
+
+env:
+    - DJANGO=1.8 DJANGO_SETTINGS_MODULE=copaDB.settings PYTHONPATH=$PYTHONPATH:$(pwd)
+
+#before_install:
+    #- sudo apt-get update
+
+install:
+    - pip install --upgrade pip
+    - pip install django
+    - pip install djangorestframework
+    - pip install markdown
+    - pip install django-filter
+
+before_script:
+    - uname -a
+    - printenv
+    - pip --version
+    - pip freeze
+    - python --version
+    - python -c "import sys; print(sys.path)"
+
+script:
+    - date
+    - ls -al
+    - python manage.py check
+    - django-admin testserver www/data/countries.json www/data/matches.json www/data/players.json --addrport localhost:8000 &> testserver.log &
+    - python manage.py check
+    - ls -al
+    #- django-admin sqlall www
+    - ls -al
+    - make test
+    - ls -al
+    - make check
+    - cat testserver.log
+
