@@ -32,11 +32,11 @@ script:
     - date
     - ls -al
     - python manage.py check
-    - django-admin testserver www/data/countries.json www/data/matches.json www/data/players.json --addrport localhost:8000 &> testserver.log &
-    - python manage.py check
-    - ls -al
+    #- django-admin testserver www/data/countries.json www/data/matches.json www/data/players.json --addrport localhost:8000 &> testserver.log &
+    #- python manage.py check
+    #- ls -al
     #- django-admin sqlall www
-    - ls -al
+    #- ls -al
     - python manage.py test
     - ls -al
     - python manage.py check
