@@ -37,8 +37,8 @@ script:
     - ls -al
     #- django-admin sqlall www
     - ls -al
-    - make test
+    - python manage.py test
     - ls -al
-    - make check
+    - python manage.py check
     - cat testserver.log
 
